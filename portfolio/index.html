@@ -1,0 +1,83 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+      <div class="bubble-container"></div>
+    <header>
+        <h1>Matthias HOLZSCHNEIDERS</h1>
+        <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="contact.html">Contact</a></li> 
+        </ul>
+        </nav>
+    </header>
+
+    <main><br>
+        
+        <!-- À propos -->
+  <section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="assets/matthias.jpeg" alt = "Profile photo" width="300" height="380" />
+      <p><br>
+      I'm Matthias Holzschneiders, a passionate and curious student currently enrolled at Epitech, where I specialize in software development and digital technologies.<br> My fascination with computers began early, driven by how the artificial intelligence
+    </p>
+    <p><br>
+      I thrive on challenges and love learning new things, whether it's mastering a new programming language, building something, or collaborating on a group project.<br> I believe that technology is not just about code — it's about solving real problems and creating meaningful experiences.
+    </p>
+    <p><br>
+      Beyond coding, I'm deeply interested in design, user experience, and the intersection between creativity and logic. I enjoy working on personal projects that blend aesthetics with functionality, and I'm always exploring new tools and frameworks to push my skills further.
+    </p>
+    <p><br>
+      When I'm not in front of my code, you'll find me playing video games. I'm also a big believer in teamwork and open communication.
+    </p>
+    <p><br>
+      This portfolio reflects my evolution, my curiosity and my ambition and will be constantly evolving.<br> I am excited about the future and always open to new collaborations, internships or creative partnerships. Let's build something great together.
+    </p>
+    </div>
+  </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Matthias HOLZSCHNEIDERS</p>
+    </footer>
+    <script>
+    const container = document.querySelector('.bubble-container');
+
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      bubble.style.left = `${Math.random() * 100}%`;
+      bubble.style.animationDuration = `${6 + Math.random() * 8}s`;
+      bubble.style.width = bubble.style.height = `${10 + Math.random() * 50}px`;
+      container.appendChild(bubble);
+    }
+    </script>
+
+    <script>
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 150); // délai progressif entre chaque élément
+      }
+    });
+  });
+
+  fadeElements.forEach(el => observer.observe(el));
+  </script>
+
+  </body>
+</html>

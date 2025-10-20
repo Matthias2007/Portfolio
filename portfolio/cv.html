@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon CV – Matthias HOLZSCHNEIDERS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Matthias HOLZSCHNEIDERS</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li> 
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cv-page fade-in">
+  <section class="cv-block">
+    <h2>Formation</h2><br>
+    <ul>
+        <li> Stage de 3e au sein de l'entreprise Optic 2000 - Fevrier 2022</li><br>
+        <li>Collège Jolio-Curie - Diplôme National du Brevet (2018-2022) </li><br>
+        <li> Lycée Jean Hanzelet - Baccalauréat Général, mention Assez Bien (2022-2025)</li><br>
+        <li>Étudiant à Epitech, spécialisation en développement logiciel et technologies numériques. Promotion 2028</li><br>
+        
+    </ul>
+  </section>
+
+  <section class="cv-block fade-in">
+    <h2>Hard skills</h2><br>
+    <ul>
+      <li>HTML, CSS, JavaScript, Python</li><br>
+      <li>Responsive Design, UI/UX</li>
+    </ul>
+  </section><br>
+
+  <section class="cv-block fade-in">
+    <h2>Soft skills</h2><br>
+    <ul>
+      <li>Auto apprentissage </li>
+      <li>Travail en équipe</li>
+      <li>Gestion du temps</li>
+      <li>Communication</li>
+      <li>Gestion du temps</li>
+      <li>Ouverture d'esprit</li>
+
+    </ul>
+  </section><br>
+
+  <section class="cv-block fade-in">
+    <h2>Projets</h2><br>
+    <ul>
+      <li>Portfolio personnel</li><br>
+      <li>Jeu du pendu en Python (console et graphique)</li>
+    </ul>
+  </section><br>
+
+  <section class="cv-block fade-in">
+    <h2>Télécharger le CV</h2><br>
+    <p>Vous pouvez télécharger mon CV complet en PDF :</p><br>
+    <a href="assets/cv.pdf" class="btn-download" download>Télécharger le CV</a>
+  </section>
+</main>
+
+  <footer class="fade-in">
+    <p>&copy; 2025 Matthias HOLZSCHNEIDERS</p>
+  </footer>
+
+  <script>
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 150); // délai progressif entre chaque élément
+      }
+    });
+  });
+
+  fadeElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

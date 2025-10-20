@@ -1,0 +1,113 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+
+    <body>
+      <div class="bubble-container"></div>
+    <header>
+        <h1>Matthias HOLZSCHNEIDERS</h1>
+        <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="contact.html">Contact</a></li> 
+        </ul>
+        </nav>
+    </header>
+
+    <main><br>
+
+  <!-- Projets -->
+  <section id="projects">
+    <h2 class="fade-in">Projects</h2><br>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3 class="fade-in">Python hangman</h3>
+        <p class="fade-in">A little hangman done in non-graphical mode</p><br>
+        <img src="assets/gameplay.png" alt="Python hangman screenshot" width="400" height="200" class="fade-in clickable img">
+        <img src="assets/help.png" alt="Python hangman screenshot" width="400" height="200" class="fade-in clickable img">
+        <img src="assets/defaite.png" alt="Python hangman screenshot" width="400" height="200" class="fade-in clickable img">
+        <a href="https://github.com/Matthias2007/hangman-game-jeu-du-pendu" target="_blank" class="github-link fade-in"> <i class="fab fa-github"></i> Voir sur GitHub</a><br>
+
+        <video width="440" height="360" controls class="fade-in">
+        <source src="assets/hangman_game.webm" type="video/mp4">
+        Your browser does not support the video tag.
+      </div><br>
+    </div><br>
+  </section>
+    </main>
+
+    <footer class="fade-in">
+        <p>&copy; 2025 Matthias HOLZSCHNEIDERS</p>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-img" src="" alt="Image en plein écran">
+    </div>
+
+    <script>
+    const container = document.querySelector('.bubble-container');
+
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      bubble.style.left = `${Math.random() * 100}%`;
+      bubble.style.animationDuration = `${8 + Math.random() * 8}s`;
+      bubble.style.width = bubble.style.height = `${15 + Math.random() * 50}px`;
+      container.appendChild(bubble);
+    }
+    </script>
+
+    <script>
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+            entry.target.classList.add('visible');
+            }, index * 150); // délai progressif entre chaque élément
+        }
+        });
+    });
+
+    fadeElements.forEach(el => observer.observe(el));
+    </script>
+
+        <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const closeBtn = document.querySelector('.close');
+
+    document.querySelectorAll('img.clickable').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+      }
+    });
+  </script>
+
+    
+
+  </body>
+</html>
