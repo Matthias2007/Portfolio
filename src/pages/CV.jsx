@@ -56,7 +56,7 @@ export default function CV() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <h2 className="font-display text-4xl md:text-5xl text-text font-bold">Parcours</h2>
             <a
-              href="/assets/CV_Matthias.H.pdf"
+              href={`${import.meta.env.BASE_URL}CV_Matthias.H.pdf`}
               download
               className="group flex items-center gap-3 px-6 py-3 border border-border hover:border-accent text-subtle hover:text-accent font-display text-xs tracking-widest transition-all duration-200 self-start md:self-auto"
             >
