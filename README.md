@@ -1,4 +1,4 @@
-# Portfolio — Matthias Holzschneiders
+# Portfolio - Matthias Holzschneiders
 
 Stack : **React 18 + Vite + Tailwind CSS + Framer Motion**
 
@@ -17,13 +17,13 @@ npm install
 ```
 
 ### 2. Mettre à jour `vite.config.js`
-Change `base` avec le nom exact de ton repo GitHub :
+Dans `vite.config.js` base doit avoir le nom exact du repo GitHub :
 ```js
 base: '/nom-de-ton-repo/',
 ```
 
 ### 3. Initialiser GitHub Pages
-Dans ton `package.json`, la propriété `homepage` devrait pointer vers :
+Dans `package.json`, la propriété `homepage` doit pointer vers :
 ```
 https://Matthias2007.github.io/nom-de-ton-repo
 ```
@@ -35,7 +35,7 @@ npm run deploy
 Cette commande build le projet et push le dossier `dist/` sur la branche `gh-pages`.
 
 ### 5. Configurer GitHub
-Dans les settings de ton repo → Pages → Source : branche `gh-pages`, dossier `/ (root)`.
+Dans les settings du repo → Pages → Source : branche `gh-pages`, dossier `/ (root)`.
 
 ---
 
