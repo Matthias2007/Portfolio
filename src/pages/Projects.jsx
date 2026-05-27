@@ -44,7 +44,7 @@ const projects = [
     tags: ['Python', 'REST API', 'SQL', 'Data Cleaning', 'Full Stack'],
     github: null,
     accent: '#8bfab5',
-    status: 'En cours',
+    status: 'Terminé',
   },
 ]
 
